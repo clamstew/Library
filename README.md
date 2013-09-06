@@ -24,7 +24,9 @@ Clay's MS Library App
 10 __(implemented in demo 8 in main.rb - runs a function from library)__ Users should be able to see a list of books that are overdue 
 
 
-*Project - Extra Credit Options*
+*Project - Extra Credit Options:*
+
+
 1 __(implemented and available in function Library.print_all_books -- shown in one of the first demo's when print_all_books was run)__ Books should have optional attributes for year-published and edition 
 
 2 Users should be able to import a .csv file with a list of books to add to the library __(not yet implemented)__
