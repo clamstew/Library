@@ -121,10 +121,6 @@ class Library
       user.num_books_checked_out -= 1 # decrement number of books a user has checked out
       puts "Thanks for returning '#{book.title}' by '#{book.author}'. Sharing is caring. You currently have #{user.num_books_checked_out} books from our library."
     end
-
-  end
-
-  def show_user_books # requirement: Checked-out books should be associated with a user
   end
 
   # Users should be able to check a book's status 
@@ -140,7 +136,42 @@ class Library
 
   # Users should be able to see a list of books that are overdue
   def show_overdue_books
-
+    book_number = 1
+    puts "========= All 'OVERDUE' books in #{self.name} ========================"
+	self.library_books.each do |book|
+      if book.user_checked_out != nil && book.status == "OVERDUE!"
+      	puts "----- Book #{book_number} ------"
+	    puts "#{book.title} "
+	    puts "#{book.description} "
+        puts "#{book.author}"
+		puts "USERNAME CHECKED OUT TO: #{book.user_checked_out.username}"
+		puts "DATE CHECKED OUT: #{book.date_checked_out.strftime("%B %d, %Y")}"
+		puts "DUE DATE: #{book.due_date.strftime("%B %d, %Y")}"
+		show_book_status(book)
+	    book_number += 1
+	  end
+	end
+	puts "========= End of all the 'OVERDUE' books in #{self.name} listing ========="
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

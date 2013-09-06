@@ -145,6 +145,41 @@ local_library.show_all_checked_out_books
 
 
 
+# ========================================================
+#
+# Demo 8: Users should be able to see a list of books that are overdue
+#
+# =========================================================
+
+puts "DEMO 8: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+local_library.show_overdue_books
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

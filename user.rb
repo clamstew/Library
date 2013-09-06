@@ -16,4 +16,5 @@ class User
   def lose_book(book, reason)
     book.status = "LOST, because #{reason}"
   end
+
 end
