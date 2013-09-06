@@ -1,3 +1,5 @@
+#require 'time'
+
 require_relative 'library'
 require_relative 'user'
 require_relative 'book'
@@ -20,8 +22,8 @@ clay = User.new(
     "555-555-5555"
   ) # name, username, address
 the_crucible = Book.new(
-    "Arthur Miller", 
     "The Crucible", 
+    "Arthur Miller", 
     "The Crucible is a 1953 play by the American playwright Arthur Miller."
   ) # author, title, description
 the_republic = Book.new(
@@ -46,12 +48,7 @@ local_library.add_book(moby_dick) # which book
 local_library.add_book(scarlett_letter) # which book
 
 # show requirement 1 is implemeneted
-local_library.library_books.each do |book|
-	puts book.title
-	puts book.description
-	puts book.author
-	# puts book.user_checked_out.username
-end
+local_library.print_all_books
 
 
 
@@ -65,17 +62,8 @@ end
 puts "DEMO 2: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 local_library.check_out_book(the_crucible, clay)
-# show requirement 1 is implemeneted
-local_library.library_books.each do |book|
-	puts book.title
-	puts book.description
-	puts book.author
-	if book.user_checked_out != nil
-	  puts book.user_checked_out.username 
-	  puts book.date_checked_out
-	  puts book.due_date
-	end
-end
+# show requirement 2 is implemeneted
+local_library.print_all_books
 
 
 
@@ -92,7 +80,7 @@ puts "DEMO 3: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 local_library.check_out_book(the_republic, clay) # checks out a second book for clay
 local_library.check_out_book(moby_dick, clay) # attempts to check out a third book for clay but should fail and return a message that user cannot check out more than one book at once
 
-
+local_library.print_all_books # to try to debug why its saying clay successfully checked out moby dick
 
 
 # ========================================================
@@ -126,8 +114,9 @@ local_library.check_out_book(scarlett_letter, bill)
 # =========================================================
 puts "DEMO 5: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
+local_library.check_in_book(the_republic, clay) # clay checks back in his second book the_republic here
 
-
+local_library.check_out_book(scarlett_letter, clay) # clay should now be able to check this out b/c he has returned his second book in the line above
 
 
 

@@ -10,11 +10,30 @@ class Library
   	@address = address
   end
 
+  def print_all_books
+    book_number = 1
+    puts "========= All the books in #{self.name} ========================"
+	self.library_books.each do |book|
+	  puts "----- Book #{book_number} ------"
+	  puts "#{book.title} "
+	  puts "#{book.description} "
+      puts "#{book.author}"
+      if book.user_checked_out != nil
+		puts "USERNAME CHECKED OUT TO: #{book.user_checked_out.username}"
+		puts "DATE CHECKED OUT: #{book.date_checked_out.strftime("%B %d, %Y")}"
+		puts "DUE DATE: #{book.due_date.strftime("%B %d, %Y")}"
+	  end
+	  book_number += 1
+	end
+	puts "========= End of all the books in #{self.name} listing ========="
+  end
+
   def add_book(book) # , user)
   	# push into library books
   	# book.user_checked_out = user
   	@library_books << book
   	@total_num_books += 1
+  	puts "BOOK ADDED: #{book.title} is now available for checkout at #{self.name}, which currently has #{total_num_books} books in circulation."
   end
 
   def check_out_book(book, user, date_checked_out = nil) # will be able to do for one week intervals
@@ -26,7 +45,8 @@ class Library
       puts "ACCOUNT FLAGGED: Sorry, you have overdue books. You must return those before you can request new books."
     else
   	  if user.num_books_checked_out < 2 # if user has less that 2 books proceed with checkout
-  	    if book.date_checked_out == nil # if book has not checkout date, proceed with checkout
+  	    if book.date_checked_out == nil # if book has not checkout date, proceed with checkout -- THIS SHOWS IT IS NOT CHECKED OUT
+  	      # initiate checkout process
   	      book.user_checked_out = user
   	      if date_checked_out # can add a custom checkout date here
   	        book.date_checked_out = date_checked_out
@@ -36,11 +56,12 @@ class Library
   	        book.due_date = Time.new + (1*7*24*60*60)
   	      end
   	      user.num_books_checked_out += 1 # increment number of books a user has checked out
+  	      puts "Congrats #{user.name}! You checked out '#{book.title}'' by #{book.author}. Please have it back on '#{book.due_date.strftime("%B %d, %Y")}' before noon, otherwise we will have to flag your account. You currently have #{user.num_books_checked_out} books from our library."
   	    else 
-  	  	  puts "Sorry, your book is checked out. to #{user.name}.  It is expected to return on #{book.due_date}"
+  	  	  puts "Sorry, your '#{book.title}' is checked out to #{user.name}.  It is expected to return on '#{book.due_date.strftime("%B %d, %Y")}' before noon."
   	    end
   	  else 
-  	    puts "Sorry, you already have 2 books out. Please return some books in order to borrow more"
+  	    puts "Sorry the #{self.name} is unable to lend you '#{book.title}'' at this time, you already have 2 books out. Please return some books in order to borrow more."
   	  end
   	end
   end
@@ -57,13 +78,25 @@ class Library
   	@library_books.each do |book|
   	  if book.user_checked_out == user && book.due_date < Time.new
         flag_account = true
-        user.account_flag = true
+        # user.account_flag = true # might implement this as a nice to have if there is time
   	  end
   	end
   	flag_account
   end
 
-  def check_in_book
+  def check_in_book(book, user)
+    if book.date_checked_out == nil
+      puts "This book is not checked out. There must be some crazy error happening!"
+    else
+      # process to check in book
+      book.user_checked_out = nil
+      book.date_checked_out = nil
+      book.due_date = nil
+
+      user.num_books_checked_out -= 1 # decrement number of books a user has checked out
+      puts "Thanks for checking in '#{book.title}' by '#{book.author}'. Sharing is caring. You currently have #{user.num_books_checked_out} books from our library."
+    end
+
   end
 
   def show_user_books # requirement: Checked-out books should be associated with a user
