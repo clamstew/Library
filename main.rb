@@ -2,7 +2,7 @@ require_relative 'library'
 require_relative 'user'
 require_relative 'book'
 
-# Requirement 1: Users should be able to add books to a library
+# Demo 1:  Users should be able to add books to a library
 local_library = Library.new("Shady Oaks Library", "621 West 90th St, Austin, TX 78722")
 clay = User.new(
     "Clay", 
@@ -49,7 +49,7 @@ end
 
 # ========================================================
 #
-# Requirement 2: A user should be able to check out books
+# Demo 2: A user should be able to check out books
 #                from the library for one week intervals
 #
 # =========================================================
@@ -71,7 +71,7 @@ end
 
 # ========================================================
 #
-# Requirement 3: A user should not be able to check out 
+# Demo 3: A user should not be able to check out 
 #                more than two books at any given time
 #
 # =========================================================
@@ -82,6 +82,12 @@ local_library.check_out_book(moby_dick, clay) # attempts to check out a third bo
 
 
 
+# ========================================================
+#
+# Demo 4: Users with overdue books should not be able to 
+#                request any new books until they turn all their overdue books in
+#
+# =========================================================
 
 
 
