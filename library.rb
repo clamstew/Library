@@ -29,6 +29,28 @@ class Library
 	puts "========= End of all the books in #{self.name} listing ========="
   end
 
+  # Users should be able to see 
+  # a list of who has checked out which book 
+  # and when those books are due to be returned
+  def show_all_checked_out_books
+    book_number = 1
+    puts "========= All 'Checked-out' books in #{self.name} ========================"
+	self.library_books.each do |book|
+      if book.user_checked_out != nil && book.status == "checked out"
+      	puts "----- Book #{book_number} ------"
+	    puts "#{book.title} "
+	    puts "#{book.description} "
+        puts "#{book.author}"
+		puts "USERNAME CHECKED OUT TO: #{book.user_checked_out.username}"
+		puts "DATE CHECKED OUT: #{book.date_checked_out.strftime("%B %d, %Y")}"
+		puts "DUE DATE: #{book.due_date.strftime("%B %d, %Y")}"
+		show_book_status(book)
+	    book_number += 1
+	  end
+	end
+	puts "========= End of all the 'Checked-out' books in #{self.name} listing ========="
+  end
+
   def add_book(book) # , user)
   	# push into library books
   	# book.user_checked_out = user
@@ -114,11 +136,7 @@ class Library
     puts "BOOK STATUS: #{book.status}"
   end
 
-  # Users should be able to see 
-  # a list of who has checked out which book 
-  # and when those books are due to be returned
-  def show_all_books_by_return_date
-  end
+  
 
   # Users should be able to see a list of books that are overdue
   def show_overdue_books

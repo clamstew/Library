@@ -134,7 +134,9 @@ clay.lose_book(scarlett_letter, "someone stole his bookbag") # clay loses the bo
 local_library.print_all_books
 
 
+# ------------ DEMO 7
 
+local_library.show_all_checked_out_books
 
 
 
