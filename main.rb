@@ -20,9 +20,21 @@ the_republic = Book.new(
     "Plato", 
     "Plato chronicals his view of the ordered soul within the context of an ideal city."
   ) # author, title, description
+moby_dick = Book.new(
+    "Moby Dick", 
+    "Herman Melville", 
+    "The Whale is a novel by Herman Melville, first published in 1851."
+  ) # author, title, description
+scarlett_letter = Book.new(
+    "The Scarlett Letter", 
+    "Herman Melville", 
+    "Hester Prine deals with being an adulterous in an old school town that is not down with that."
+  ) # author, title, description
 # add a couple books to my new library
 local_library.add_book(the_crucible) # which book
 local_library.add_book(the_republic) # which book
+local_library.add_book(moby_dick) # which book
+local_library.add_book(scarlett_letter) # which book
 
 # show requirement 1 is implemeneted
 local_library.library_books.each do |book|
@@ -31,6 +43,9 @@ local_library.library_books.each do |book|
 	puts book.author
 	# puts book.user_checked_out.username
 end
+
+
+
 
 # ========================================================
 #
@@ -50,3 +65,51 @@ local_library.library_books.each do |book|
 	  puts book.due_date
 	end
 end
+
+
+
+
+# ========================================================
+#
+# Requirement 3: A user should not be able to check out 
+#                more than two books at any given time
+#
+# =========================================================
+# at this point user clay already has the_crucible checked out
+local_library.check_out_book(the_republic, clay) # checks out a second book for clay
+local_library.check_out_book(moby_dick, clay) # attempts to check out a third book for clay but should fail and return a message that user cannot check out more than one book at once
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,10 +20,17 @@ class Library
   def check_out_book(book, user) # will be able to do for one week intervals
   	# checks to see that a user does not have 2 other books checked out
   	# if user has over due books cannot check out any new books until return overdue books
-  	if book.date_checked_out == nil
-  		book.user_checked_out = user
-  		book.date_checked_out = Time.new
-  		book.due_date = Time.new + (1*7*24*60*60)
+  	if user.num_books_checked_out < 2
+  	  if book.date_checked_out == nil
+  	    book.user_checked_out = user
+  	    book.date_checked_out = Time.new
+  	    book.due_date = Time.new + (1*7*24*60*60)
+  	    user.num_books_checked_out += 1
+  	  else 
+  	  	puts "Sorry, your book is checked out. to #{user.name}.  It is expected to return on #{book.due_date}"
+  	  end
+  	else 
+  	  puts "Sorry, you already have 2 books out. Please return some books in order to borrow more"
   	end
   end
 
