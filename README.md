@@ -10,7 +10,7 @@ Clay's MS Library App
 5 __(implemented - shown in demo 2 in main.rb - shows username of book rented)__ Checked-out books should be associated with a user
 6 __(implemented - shown in demo 4 in main.rb - uses a second function to check to see if user's account if flagged)__ Users with overdue books should not be able to request any new books until they turn all their overdue books in 
 7 __(implemented - shown in demo 5 in main.rb - users can go check in books then only have 1 checked out and check out a second book)__ Users should be able to check in books to the library when they're finished with them 
-8 Users should be able to check a book's status (e.g. available, checked out, overdue or lost) __(not yet implemented)__
+8 __(implemented at the end of demo 6 - user clay gets his bag stolen and all the different kinds of statuses are printed out for books)__ Users should be able to check a book's status (e.g. available, checked out, overdue or lost) 
 9 Users should be able to see a list of who has checked out which book and when those books are due to be returned __(not yet implemented)__
 10 Users should be able to see a list of books that are overdue __(not yet implemented)__
 

@@ -23,6 +23,7 @@ class Library
 		puts "DATE CHECKED OUT: #{book.date_checked_out.strftime("%B %d, %Y")}"
 		puts "DUE DATE: #{book.due_date.strftime("%B %d, %Y")}"
 	  end
+	  show_book_status(book)
 	  book_number += 1
 	end
 	puts "========= End of all the books in #{self.name} listing ========="
@@ -56,6 +57,7 @@ class Library
   	        book.due_date = Time.new + (1*7*24*60*60)
   	      end
   	      user.num_books_checked_out += 1 # increment number of books a user has checked out
+  	      book.status = "checked out"
   	      puts "Congrats #{user.name}! You checked out '#{book.title}'' by #{book.author}. Please have it back on '#{book.due_date.strftime("%B %d, %Y")}' before noon, otherwise we will have to flag your account. You currently have #{user.num_books_checked_out} books from our library."
   	    else 
   	  	  puts "Sorry, your '#{book.title}' is checked out to #{user.name}.  It is expected to return on '#{book.due_date.strftime("%B %d, %Y")}' before noon."
@@ -84,7 +86,8 @@ class Library
   	flag_account
   end
 
-  def check_in_book(book, user)
+  def return_book(book)
+  	user = book.user_checked_out
     if book.date_checked_out == nil
       puts "This book is not checked out. There must be some crazy error happening!"
     else
@@ -92,9 +95,9 @@ class Library
       book.user_checked_out = nil
       book.date_checked_out = nil
       book.due_date = nil
-
+      book.status = "available"
       user.num_books_checked_out -= 1 # decrement number of books a user has checked out
-      puts "Thanks for checking in '#{book.title}' by '#{book.author}'. Sharing is caring. You currently have #{user.num_books_checked_out} books from our library."
+      puts "Thanks for returning '#{book.title}' by '#{book.author}'. Sharing is caring. You currently have #{user.num_books_checked_out} books from our library."
     end
 
   end
@@ -104,8 +107,11 @@ class Library
 
   # Users should be able to check a book's status 
   # (e.g. available, checked out, overdue or lost)
-  def show_book_status 
-
+  def show_book_status(book)
+  	if book.due_date != nil && book.due_date < Time.new
+  	  book.status = "OVERDUE!"
+    end
+    puts "BOOK STATUS: #{book.status}"
   end
 
   # Users should be able to see 

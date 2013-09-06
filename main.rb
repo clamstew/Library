@@ -114,18 +114,24 @@ local_library.check_out_book(scarlett_letter, bill)
 # =========================================================
 puts "DEMO 5: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-local_library.check_in_book(the_republic, clay) # clay checks back in his second book the_republic here
-
+local_library.return_book(the_republic) # clay checks back in his second book the_republic here
 local_library.check_out_book(scarlett_letter, clay) # clay should now be able to check this out b/c he has returned his second book in the line above
 
+local_library.print_all_books
 
 
 
 
+# ========================================================
+#
+# Demo 6: Users should be able to check a book's status (e.g. available, checked out, overdue or lost)
+#          Also had to make a user function in this part so a user could lose a book
+#
+# =========================================================
+puts "DEMO 6: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-
-
-
+clay.lose_book(scarlett_letter, "someone stole his bookbag") # clay loses the book here
+local_library.print_all_books
 
 
 
