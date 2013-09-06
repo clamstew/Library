@@ -5,7 +5,7 @@ Clay's MS Library App
 
 + __(implemented)__ Users should be able to add books to a library
 + __(implemented - shown in test for requiment 1 in main.rb)__ Books should be able to have information saved about them (author, title, description)
-+ A user should be able to check out books from the library for one week intervals __(not yet implemented)__
++ __(implemented - shown in requirement 2 in main.rb - shows date rented and due date)__ A user should be able to check out books from the library for one week intervals
 + A user should not be able to check out more than two books at any given time __(not yet implemented)__
 + Checked-out books should be associated with a user __(not yet implemented)__
 + Users with overdue books should not be able to request any new books until they turn all their overdue books in __(not yet implemented)__

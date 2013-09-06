@@ -21,14 +21,32 @@ the_republic = Book.new(
     "Plato chronicals his view of the ordered soul within the context of an ideal city."
   ) # author, title, description
 # add a couple books to my new library
-local_library.add_book(the_crucible, clay) # which book
-local_library.add_book(the_republic, clay) # which book
+local_library.add_book(the_crucible) # which book
+local_library.add_book(the_republic) # which book
 
 # show requirement 1 is implemeneted
 local_library.library_books.each do |book|
 	puts book.title
 	puts book.description
 	puts book.author
-	puts book.user_checked_out.username
+	# puts book.user_checked_out.username
 end
 
+# ========================================================
+#
+# Requirement 2: A user should be able to check out books
+#                from the library for one week intervals
+#
+# =========================================================
+local_library.check_out_book(the_crucible, clay)
+# show requirement 1 is implemeneted
+local_library.library_books.each do |book|
+	puts book.title
+	puts book.description
+	puts book.author
+	if book.user_checked_out != nil
+	  puts book.user_checked_out.username 
+	  puts book.date_checked_out
+	  puts book.due_date
+	end
+end
