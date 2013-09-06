@@ -160,7 +160,7 @@ local_library.show_overdue_books
 
 # ========================================================
 #
-# Demo 9ß: Show implementing optional requirement # 3 
+# Demo 9: Show implementing optional requirement # 3 
 #		   Leaving book reviews
 #
 # =========================================================
@@ -172,8 +172,13 @@ moby_dick.get_all_book_reviews
 
 
 
-
-
+# ========================================================
+#
+# Demo 10: Show implementing optional requirement # 2
+#		   read in csv
+#
+# =========================================================
+# local_library.import_csv_book_list('data.csv')
 
 
 

@@ -156,6 +156,18 @@ class Library
 	puts "========= End of all the 'OVERDUE' books in #{self.name} listing ========="
   end
 
+  def import_csv_book_list(file_path)
+  	filename = file_path
+	file = File.new(filename, 'r')
+
+	file.encode('UTF-8').each_line("\n") do |row|
+	  columns = row.split(",")
+	  
+	  break if file.lineno > 10
+	end
+	puts columns
+  end
+
 end
 
 
