@@ -134,8 +134,13 @@ clay.lose_book(scarlett_letter, "someone stole his bookbag") # clay loses the bo
 local_library.print_all_books
 
 
-# ------------ DEMO 7
-
+# ========================================================
+#
+# Demo 7: Users should be able to see a list of who has checked 
+#            out which book and when those books are due to be returned
+#
+# =========================================================
+puts "DEMO 7: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 local_library.show_all_checked_out_books
 
 

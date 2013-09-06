@@ -19,7 +19,7 @@ Clay's MS Library App
 
 8 __(implemented at the end of demo 6 - user clay gets his bag stolen and all the different kinds of statuses are printed out for books)__ Users should be able to check a book's status (e.g. available, checked out, overdue or lost) 
 
-9 Users should be able to see a list of who has checked out which book and when those books are due to be returned __(not yet implemented)__
+9 __(implemented - in demo 7 - prints out all the currently checked out books)__ Users should be able to see a list of who has checked out which book and when those books are due to be returned 
 
 10 Users should be able to see a list of books that are overdue __(not yet implemented)__
 
