@@ -25,8 +25,12 @@ Clay's MS Library App
 
 
 *Project - Extra Credit Options*
-+ __(implemented and available in function Library.print_all_books )__ Books should have optional attributes for year-published and edition 
-+ Users should be able to import a .csv file with a list of books to add to the library __(not yet implemented)__
-+ Users should be able to leave reviews on books with both a rating and an optional written review __(not yet implemented)__
-+ Users should be able to schedule a future check-out for a book that is currently checked-out __(not yet implemented)__
-+ Users should be able to do a one-time extension for a week if no one has scheduled a future check-out for that book __(not yet implemented)__
+1 __(implemented and available in function Library.print_all_books -- shown in one of the first demo's when print_all_books was run)__ Books should have optional attributes for year-published and edition 
+
+2 Users should be able to import a .csv file with a list of books to add to the library __(not yet implemented)__
+
+3 __(implemented in demo 9 in main.rb - where two users both put in reviews for moby_dick and then all the reviews for that book are returned)__ Users should be able to leave reviews on books with both a rating and an optional written review 
+
+4 Users should be able to schedule a future check-out for a book that is currently checked-out __(not yet implemented)__
+
+5 Users should be able to do a one-time extension for a week if no one has scheduled a future check-out for that book __(not yet implemented)__

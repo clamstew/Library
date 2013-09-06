@@ -158,9 +158,16 @@ local_library.show_overdue_books
 
 
 
-
-
-
+# ========================================================
+#
+# Demo 9ß: Show implementing optional requirement # 3 
+#		   Leaving book reviews
+#
+# =========================================================
+puts "DEMO 9: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+clay.leave_book_review(moby_dick, 4, "Great Read")
+bill.leave_book_review(moby_dick, 3, "Really really hard to read and stay awake through. It is about hunting a white whale...")
+moby_dick.get_all_book_reviews
 
 
 
