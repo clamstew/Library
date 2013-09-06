@@ -2,7 +2,16 @@ require_relative 'library'
 require_relative 'user'
 require_relative 'book'
 
+
+# ========================================================
+#
 # Demo 1:  Users should be able to add books to a library
+#
+#
+# =========================================================
+puts "DEMO 1: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
+
 local_library = Library.new("Shady Oaks Library", "621 West 90th St, Austin, TX 78722")
 clay = User.new(
     "Clay", 
@@ -53,6 +62,8 @@ end
 #                from the library for one week intervals
 #
 # =========================================================
+puts "DEMO 2: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
 local_library.check_out_book(the_crucible, clay)
 # show requirement 1 is implemeneted
 local_library.library_books.each do |book|
@@ -75,6 +86,8 @@ end
 #                more than two books at any given time
 #
 # =========================================================
+puts "DEMO 3: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+# local_library.check_if_user_has_overdue_books(clay) ## shows what this function is returning
 # at this point user clay already has the_crucible checked out
 local_library.check_out_book(the_republic, clay) # checks out a second book for clay
 local_library.check_out_book(moby_dick, clay) # attempts to check out a third book for clay but should fail and return a message that user cannot check out more than one book at once
@@ -88,14 +101,30 @@ local_library.check_out_book(moby_dick, clay) # attempts to check out a third bo
 #                request any new books until they turn all their overdue books in
 #
 # =========================================================
+puts "DEMO 4: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
+# create a new user to test, since clay already has 2 books out and there is not check_in method yet
+bill = User.new(
+    "Bill Smith", 
+    "billsmith", 
+    "65 Main Street, Austin, TX 78711",
+    "555-555-6666"
+  ) # name, username, address
 
 
+local_library.check_out_book(moby_dick, bill, Time.new - (4*7*24*60*60)) # should show on the second book that Bill has this as an overdue book
+# try to check out a second book - that flag account function should run
+# this demo should then output --> ACCOUNT FLAGGED: Sorry, you have overdue books. You must return those before you can request new books.
+local_library.check_out_book(scarlett_letter, bill)
 
 
-
-
-
-
+# ========================================================
+#
+# Demo 5: Users should be able to check in 
+#           books to the library when they're finished with them
+#
+# =========================================================
+puts "DEMO 5: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 
 
