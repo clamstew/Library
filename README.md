@@ -13,3 +13,11 @@ Clay's MS Library App
 + Users should be able to check a book's status (e.g. available, checked out, overdue or lost)
 + Users should be able to see a list of who has checked out which book and when those books are due to be returned
 + Users should be able to see a list of books that are overdue
+
+
+*Project - Extra Credit Options*
++ Books should have optional attributes for year-published and edition
++ Users should be able to import a .csv file with a list of books to add to the library
++ Users should be able to leave reviews on books with both a rating and an optional written review
++ Users should be able to schedule a future check-out for a book that is currently checked-out
++ Users should be able to do a one-time extension for a week if no one has scheduled a future check-out for that book
