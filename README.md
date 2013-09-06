@@ -3,7 +3,7 @@ Clay's MS Library App
 
 *Basic Requirements:*
 
-+ Users should be able to add books to a library __(not yet implemented)__
++ Users should be able to add books to a library __(implemented)__
 + Books should be able to have information saved about them (author, title, description) __(not yet implemented)__
 + A user should be able to check out books from the library for one week intervals __(not yet implemented)__
 + A user should not be able to check out more than two books at any given time __(not yet implemented)__
