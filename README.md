@@ -21,7 +21,7 @@ Clay's MS Library App
 
 9 __(implemented - in demo 7 - prints out all the currently checked out books)__ Users should be able to see a list of who has checked out which book and when those books are due to be returned 
 
-10 Users should be able to see a list of books that are overdue __(not yet implemented)__
+10 __(implemented in demo 8 in main.rb - runs a function from library)__ Users should be able to see a list of books that are overdue 
 
 
 *Project - Extra Credit Options*
