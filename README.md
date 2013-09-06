@@ -25,7 +25,7 @@ Clay's MS Library App
 
 
 *Project - Extra Credit Options*
-+ Books should have optional attributes for year-published and edition __(not yet implemented)__
++ __(implemented and available in function Library.print_all_books )__ Books should have optional attributes for year-published and edition 
 + Users should be able to import a .csv file with a list of books to add to the library __(not yet implemented)__
 + Users should be able to leave reviews on books with both a rating and an optional written review __(not yet implemented)__
 + Users should be able to schedule a future check-out for a book that is currently checked-out __(not yet implemented)__

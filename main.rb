@@ -34,7 +34,9 @@ the_republic = Book.new(
 moby_dick = Book.new(
     "Moby Dick", 
     "Herman Melville", 
-    "The Whale is a novel by Herman Melville, first published in 1851."
+    "The Whale is a novel by Herman Melville, first published in 1851.",
+    "1851", 
+    "1st"
   ) # author, title, description
 scarlett_letter = Book.new(
     "The Scarlett Letter", 

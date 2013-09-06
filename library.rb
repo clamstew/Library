@@ -15,9 +15,11 @@ class Library
     puts "========= All the books in #{self.name} ========================"
 	self.library_books.each do |book|
 	  puts "----- Book #{book_number} ------"
-	  puts "#{book.title} "
-	  puts "#{book.description} "
-      puts "#{book.author}"
+	  puts "TITLE: #{book.title} "
+	  puts "DESCRIPTION: #{book.description} "
+      puts "AUTHOR: #{book.author}"
+      puts "PUBLISH DATE: #{book.pub_year}" if book.pub_year != nil
+      puts "EDITION: #{book.edition}" if book.edition != nil
       if book.user_checked_out != nil
 		puts "USERNAME CHECKED OUT TO: #{book.user_checked_out.username}"
 		puts "DATE CHECKED OUT: #{book.date_checked_out.strftime("%B %d, %Y")}"
