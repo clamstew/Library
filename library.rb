@@ -13,22 +13,22 @@ class Library
   def print_all_books
     book_number = 1
     puts "========= All the books in #{self.name} ========================"
-	self.library_books.each do |book|
-	  puts "----- Book #{book_number} ------"
-	  puts "TITLE: #{book.title} "
-	  puts "DESCRIPTION: #{book.description} "
-      puts "AUTHOR: #{book.author}"
-      puts "PUBLISH DATE: #{book.pub_year}" if book.pub_year != nil
-      puts "EDITION: #{book.edition}" if book.edition != nil
-      if book.user_checked_out != nil
-		puts "USERNAME CHECKED OUT TO: #{book.user_checked_out.username}"
-		puts "DATE CHECKED OUT: #{book.date_checked_out.strftime("%B %d, %Y")}"
-		puts "DUE DATE: #{book.due_date.strftime("%B %d, %Y")}"
-	  end
-	  show_book_status(book)
-	  book_number += 1
-	end
-	puts "========= End of all the books in #{self.name} listing ========="
+  	self.library_books.each do |book|
+  	  puts "----- Book #{book_number} ------"
+  	  puts "TITLE: #{book.title} "
+  	  puts "DESCRIPTION: #{book.description} "
+        puts "AUTHOR: #{book.author}"
+        puts "PUBLISH DATE: #{book.pub_year}" if book.pub_year != nil
+        puts "EDITION: #{book.edition}" if book.edition != nil
+        if book.user_checked_out != nil
+  		puts "USERNAME CHECKED OUT TO: #{book.user_checked_out.username}"
+  		puts "DATE CHECKED OUT: #{book.date_checked_out.strftime("%B %d, %Y")}"
+  		puts "DUE DATE: #{book.due_date.strftime("%B %d, %Y")}"
+  	  end
+  	  show_book_status(book)
+  	  book_number += 1
+  	end
+	  puts "========= End of all the books in #{self.name} listing ========="
   end
 
   # Users should be able to see 
@@ -157,6 +157,7 @@ class Library
   end
 
   def import_csv_book_list(file_path)
+    # look at - http://snippets.aktagon.com/snippets/246-how-to-parse-csv-data-with-ruby
   	filename = file_path
 	file = File.new(filename, 'r')
 
