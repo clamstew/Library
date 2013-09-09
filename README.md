@@ -35,4 +35,4 @@ Clay's MS Library App
 
 4 __(implemented and shown in Demo 11 in main.rb - tests a book that is checked out and one with a status other than checked out.)__ Users should be able to schedule a future check-out for a book that is currently checked-out 
 
-5 Users should be able to do a one-time extension for a week if no one has scheduled a future check-out for that book __(not yet implemented)__
+5 __(implemented and demonstrated in demo 12 in main.rb)__ Users should be able to do a one-time extension for a week if no one has scheduled a future check-out for that book 
