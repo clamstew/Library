@@ -57,5 +57,4 @@ class Book
       puts review
   	end
   end
-
 end
