@@ -14,7 +14,7 @@ class User
   end
   
   # user needs to be able to loose a book so a books status can be set to lost
-  def lose_book(book, reason)
+  def lose_book book, reason
     book.status = "LOST, because #{reason}"
   end
 
@@ -22,5 +22,7 @@ class User
   	new_review_hash = { rating: rating, review: review, user: self.username, datetime: Time.new }
   	book.reviews << new_review_hash
   end
+
+  
 
 end

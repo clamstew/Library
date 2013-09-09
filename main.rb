@@ -178,10 +178,20 @@ moby_dick.get_all_book_reviews
 #		   read in csv
 #
 # =========================================================
-# local_library.import_csv_book_list('data.csv')
+puts "DEMO 10: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+local_library.import 'data.csv'
 
 
-
+# ========================================================
+#
+# Demo 11: Show implementing optional requirement # 4
+#      Users should be able to schedule a future 
+#      check-out for a book that is currently checked-out
+#
+# =========================================================
+puts "DEMO 11: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+local_library.schedule_book_checkout the_crucible, bill
+local_library.schedule_book_checkout moby_dick, clay
 
 
 
