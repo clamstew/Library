@@ -193,11 +193,25 @@ puts "DEMO 11: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 local_library.schedule_book_checkout the_crucible, bill
 local_library.schedule_book_checkout moby_dick, clay
 
+# ========================================================
+#
+# Demo 12: Show implementing optional requirement # 4
+#      Users should be able to do a one-time extension for a week 
+#       if no one has scheduled a future check-out for that book
+#
+# =========================================================
+puts "DEMO 12: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-
-
-
-
+ruby_objects = Book.new(
+    "Ruby Objects, Demistified", 
+    "Michael Haertel", 
+    "They are Everything...",
+    "2006", 
+    "4th"
+  ) # author, title, description
+local_library.return_book scarlett_letter
+local_library.check_out_book ruby_objects, clay, Time.new - (0.5*7*24*60*60)
+local_library.schedule_book_extension ruby_objects, clay
 
 
 

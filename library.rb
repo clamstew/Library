@@ -115,7 +115,15 @@ class Library
   end
 
   def schedule_book_extension book, user
-    # if @one_time_extension == false
+    # if @one_time_extension == false && and username extending matches one of checked out
+    if book.one_time_extension == false && book.future_check_out_reserved == false
+      old_due_date = book.due_date
+      book.due_date += (1*7*24*60*60) # add one week
+      book.one_time_extension = true
+      puts "Your one week extension for '#{book.title}' has been scheduled. You old due date of #{old_due_date.strftime("%B %d, %Y")} has been extended for one week to #{book.due_date.strftime("%B %d, %Y")}."
+    else 
+      puts "'#{book.title}' already has an extension for this checkout. Sorry!"
+    end
     # allow a user to add + 1 week to the due date
     # set @one_time_extension to true in this method
     # ADD on return book method set the @one_time_extension to false again
@@ -148,6 +156,7 @@ class Library
       book.user_checked_out = nil
       book.date_checked_out = nil
       book.due_date = nil
+      book.one_time_extension = false # set one tiem extension to false for the book in case the user extended it
       book.status = "available"
       user.num_books_checked_out -= 1 # decrement number of books a user has checked out
       puts "Thanks for returning '#{book.title}' by '#{book.author}'. Sharing is caring. You currently have #{user.num_books_checked_out} books from our library."
