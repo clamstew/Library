@@ -1,8 +1,18 @@
-# 
-# 
 class User
   attr_accessor :name, :username, :address, :phone, :num_books_checked_out, :account_flag
 
+  # Public: Initialize a user object with some instance variables
+  #
+  # name  - The String of the name for this user object.
+  # username - The String of the username for this user object.
+  # count - The Integer number of times to duplicate the text.
+  #
+  # Examples
+  #
+  #   multiplex('Tom', 4)
+  #   # => 'TomTomTomTom'
+  #
+  # Returns the duplicated String.
   def initialize(name, username, address, phone)
   	# @id ||= # might put in user id's
   	@name = name
