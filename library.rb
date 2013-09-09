@@ -5,6 +5,18 @@ class Library
 
   attr_accessor :total_num_books, :library_books, :name, :address
 
+  # Initialize a library object
+  #
+  # name - The String with the name of the library
+  # address - The String with the name of the address
+  #
+  # Examples
+  #   
+  #   add_ingredient('parsley')
+  #   # => ["pork", "tortilla", "parsley"]
+  #
+  # Returns the Array with the new ingredient added
+  # to the end.
   def initialize(name, address)
   	@total_num_books = 0
   	@library_books = []
