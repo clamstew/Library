@@ -34,8 +34,6 @@ class User
   	@account_flag = false
   end
   
-  # user needs to be able to loose a book so a books status can be set to lost
-
   # Public: Allow the user to lose a book, which marks the book's status as lost
   #
   # book  - The book Object to be lost.
@@ -51,8 +49,51 @@ class User
     book.status = "LOST, because #{reason}"
   end
 
-  def leave_book_review(book, rating, review = nil)
+  # Public: lets a user leave a book review
+  #
+  # book  - The Book Object to add a hash to for .
+  # rating - The Integer with a rating 1-5
+  # review - The String with a description of the review - will default to nil if nothing input
+  #
+  # Examples
+  #   
+  #   john.leave_book_review scarlett_letter, 4, "Great Book!"
+  #   # => #<Book:0x007fc8838533f8 ... @reviews=[{rating: 4, review: "Great Book!", user: "jsmith", datetime: "2013-09-09 12:54:16 -0500"}] ... >
+  #
+  # Pushes the new_review_hash into the @review ivar array for that book object.
+  def leave_book_review book, rating, review = nil
   	new_review_hash = { rating: rating, review: review, user: self.username, datetime: Time.new }
   	book.reviews << new_review_hash
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
